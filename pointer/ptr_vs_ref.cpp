@@ -72,18 +72,27 @@ int main(){
 
   cout << "Call by reference:a" << endl;
   callByRef(a);
+  cout << "-> a = " << a << endl;
+  cout << endl;
   // Ans:
   //  p = 10
   // &p = 0x000000cc
+  // callByRef(a){
+  //   a++;
+  // }
+  // a = 11
 
   cout << "Call by reference:ref1" << endl;
   callByRef(ref1);
+  cout << "-> ref1 = " << ref1 << endl << endl;
   // Ans:
-  //  p = 10
+  //  p = 11
   // &p = 0x000000cc
+  // ref1 = 12
 
   cout << "Call by reference?*ptr1" << endl;
   callByRef(*ptr1);
+  cout << "-> *ptr1 = " << *ptr1 << endl << endl;
 
   // Write call_by_reference:
   // int a = 10;
@@ -96,6 +105,7 @@ int main(){
 
   cout << "Call by value:ptr" << endl;
   callByVal(ptr1);
+  cout << "-> *ptr1 = " << *ptr1 << endl << endl;
   // Ans:
   // *p = 10
   //  p = 0x000000cc
@@ -127,7 +137,9 @@ void callByRef(int &p){
   cout << "func(n)" << endl;
   cout << "func(int &p)" << endl;
   cout << " p = " << p << endl;
-  cout << "&p = " << &p << endl << endl;
+  cout << "&p = " << &p << endl;
+
+  p++;
 }
 
 void callByVal(int *p){
@@ -135,5 +147,7 @@ void callByVal(int *p){
   cout << "func(int *p)" << endl;
   cout << "*p = " << *p << endl;
   cout << " p = " << p << endl;
-  cout << "&p = " << &p << endl << endl;
+  cout << "&p = " << &p << endl;
+
+  (*p)++;
 }
