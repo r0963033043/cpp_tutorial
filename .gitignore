@@ -1,5 +1,6 @@
 # .gitignore
 # 忽略所有執行檔
 *.exe
+*.o
 
 
